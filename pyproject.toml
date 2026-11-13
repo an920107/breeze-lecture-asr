@@ -1,7 +1,7 @@
 [project]
-name = "breeze-asr-workspace"
+name = "breeze-lecture-asr"
 version = "0.1.0"
-description = "Breeze-ASR-25 transcription pipeline for CS lectures"
+description = "Turn lecture audio or YouTube videos into SRT subtitles and text notes with Breeze-ASR-25 (faster-whisper), tuned for Chinese–English CS lectures."
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 dependencies = [
@@ -19,4 +19,3 @@ dependencies = [
 
 [tool.uv]
 package = false
-
