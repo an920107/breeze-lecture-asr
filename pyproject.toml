@@ -1,0 +1,22 @@
+[project]
+name = "breeze-asr-workspace"
+version = "0.1.0"
+description = "Breeze-ASR-25 transcription pipeline for CS lectures"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "faster-whisper>=1.0.0",
+    # faster-whisper 1.2.1 會傳 metadata_errors 給 av.open，但 PyAV 19 已移除該參數
+    "av>=11,<19",
+    "transformers[torch]>=4.38.0",
+    "torch>=2.1.0",
+    "yt-dlp>=2024.12.13",
+    # 從 Chromium 系瀏覽器 (brave/chrome) 讀 cookies 時，解密需要 secretstorage 存取 GNOME keyring
+    "secretstorage>=3.3 ; sys_platform == 'linux'",
+    # CTranslate2 需要 libcublas.so.12，但 Fedora 的 NVIDIA 倉庫已只剩 CUDA 13
+    "nvidia-cublas-cu12>=12.4 ; sys_platform == 'linux'",
+]
+
+[tool.uv]
+package = false
+
